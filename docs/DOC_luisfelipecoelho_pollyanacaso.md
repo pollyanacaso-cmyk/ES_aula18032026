@@ -41,6 +41,11 @@ Permitir registrar um novo aluno no sistema.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
+### Diagrama de Atividade 1 — Cadastro ou Atualização de Aluno
+Esta atividade representa o fluxo de registro ou atualização de dados de alunos. O sistema valida os dados inseridos, garante que não haja duplicidade de CPF e salva as informações corretamente.
+
+<img width="531" height="430" alt="image" src="https://github.com/user-attachments/assets/aa5b5fd8-45cb-46ac-8c80-692cedc47e4d" />
+
 ---
 
 ## UC02 — Atualizar Dados do Aluno
@@ -76,6 +81,11 @@ Permitir a atualização das informações cadastrais do aluno.
 
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
+
+### Caso de Atividade 2 — Registro de Pagamento
+Esta atividade descreve o processo de registro de pagamento das mensalidades dos alunos, verificando a situação do plano, bloqueando pagamentos parciais e atualizando a regularidade do aluno.
+
+<img width="275" height="350" alt="image" src="https://github.com/user-attachments/assets/25787de1-2524-4f7a-8b56-d7d9fb902062" />
 
 ---
 
@@ -114,6 +124,11 @@ Registrar pagamento da mensalidade do aluno.
 - RN04 — Pagamento parcial não permitido  
 - RN07 — Atualização automática da regularidade
 
+### Atividade 3 — Verificação de Regularidade
+Esta atividade realiza a conferência automática da situação do aluno em relação a pagamentos e vencimentos, classificando-o como regular ou inadimplente, e aplicando bloqueios quando necessário.
+
+<img width="413" height="414" alt="image" src="https://github.com/user-attachments/assets/2de02181-b85b-44d0-a39b-6c20f37a2277" />
+
 ---
 
 ## UC04 — Verificar Regularidade do Aluno
@@ -147,6 +162,11 @@ Verificar automaticamente se o aluno está com pagamento em dia.
 
 ### **RN Relacionadas**
 - RN01 — Bloqueio por inadimplência
+
+### Atividade 4 — Alteração de Planos
+Esta atividade abrange criação, edição, ativação e desativação de planos de academia, garantindo que os planos estejam sempre atualizados e disponíveis para contratação conforme o status.
+
+<img width="324" height="295" alt="image" src="https://github.com/user-attachments/assets/d1e03d5e-10f2-4f95-9aca-8f30f3ac7d4f" />
 
 ---
 
@@ -187,6 +207,11 @@ Validar entrada do aluno na academia.
 ### **RN Relacionadas**
 - RN01 — Bloqueio por inadimplência
 
+### Atividade 5 — Agendamento e Cancelamento de Aulas
+Esta atividade gerencia o agendamento e cancelamento de aulas pelos alunos, verificando limites de vagas, respeitando prazos e confirmando reservas.
+
+<img width="365" height="359" alt="image" src="https://github.com/user-attachments/assets/8824e8c3-1589-4f22-842f-e2e82efdfcd2" />
+
 ---
 
 ## UC06 — Agendar Aula
@@ -222,6 +247,11 @@ Permitir reservar vaga em aula disponível.
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
 
+### Caso de Atividade 6 — Registro de Presença em Aula
+Esta atividade permite ao instrutor marcar a presença ou ausência de alunos, garantindo o controle correto da participação em cada aula.
+
+<img width="279" height="295" alt="image" src="https://github.com/user-attachments/assets/9b2a990e-a55a-4786-9c40-0fa2de78f1ee" />
+
 ---
 
 ## UC07 — Cancelar Agendamento de Aula
@@ -245,8 +275,7 @@ Permitir cancelamento de reserva em aula.
 4. Sistema remove reserva.
 
 ### **Fluxos Alternativos**
-**A1 — Prazo expirado**  
-- Sistema bloqueia cancelamento.
+**A1 — Prazo expirado** - Sistema bloqueia cancelamento.
 
 ### **RF Relacionados**
 - RF06 — Agendamento de Aulas
@@ -257,7 +286,122 @@ Permitir cancelamento de reserva em aula.
 ### **RN Relacionadas**
 - RN03 — Cancelamento até 1 hora antes
 
+### Caso de Atividade 7 — Registro de Avaliação Física
+Esta atividade descreve o fluxo de registro de avaliações físicas, incluindo peso, IMC e gordura corporal, apenas para alunos ativos e regulares.
+
+<img width="320" height="295" alt="image" src="https://github.com/user-attachments/assets/3132a362-6f07-4955-b98f-672799d4aa4d" />
+
 ---
+
+## UC08 — Registrar Presença em Aula
+
+### **Ator Principal**
+Instrutor
+
+### **Objetivo**
+Registrar presença dos alunos participantes da aula.
+
+### **Pré-condições**
+- Aula deve estar agendada.
+
+### **Pós-condições**
+- Presença registrada.
+
+### **Fluxo Principal**
+1. Instrutor acessa aula programada.
+2. Instrutor visualiza lista de alunos.
+3. Instrutor marca presença dos alunos.
+4. Sistema salva registro.
+
+### **Fluxos Alternativos**
+**A1 — Aluno não compareceu** - Instrutor registra ausência.
+
+### **RF Relacionados**
+- RF07 — Lista de Presença
+
+### **RNF Relacionados**
+- RNF04 — Usabilidade
+
+### **RN Relacionadas**
+- RN06 — Acesso restrito por perfil
+
+### Caso de Atividade 8 — Emissão de Relatórios
+Esta atividade permite ao gerente gerar relatórios gerenciais de forma segura e confiável, auxiliando na tomada de decisões.
+
+<img width="295" height="489" alt="image" src="https://github.com/user-attachments/assets/9a854be9-3349-4a47-9775-fe0de2ac5093" />
+
+---
+
+## UC09 — Registrar Avaliação Física
+
+### **Ator Principal**
+Instrutor
+
+### **Objetivo**
+Registrar avaliação física do aluno.
+
+### **Pré-condições**
+- Aluno deve estar ativo e regular.
+
+### **Pós-condições**
+- Avaliação salva no histórico do aluno.
+
+### **Fluxo Principal**
+1. Instrutor acessa cadastro do aluno.
+2. Instrutor registra dados da avaliação (peso, IMC, gordura).
+3. Sistema salva avaliação.
+
+### **Fluxos Alternativos**
+**A1 — Aluno irregular** - Sistema impede registro da avaliação.
+
+### **RF Relacionados**
+- RF08 — Avaliação Física
+
+### **RNF Relacionados**
+- RNF02 — Segurança
+
+### **RN Relacionadas**
+- RN05 — Avaliação física apenas para alunos ativos
+
+### Caso Atividade 9 — Notificações Automáticas
+Esta atividade engloba envio de notificações sobre vencimento de mensalidade, confirmação de agendamento e disponibilidade de avaliações físicas, garantindo comunicação efetiva com os alunos.
+
+<img width="305" height="350" alt="image" src="https://github.com/user-attachments/assets/db1eed8c-8015-4c83-b9a5-e615559ae524" />
+
+---
+
+## UC10 — Emitir Relatório Gerencial
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Gerar relatórios de gestão da academia.
+
+### **Pré-condições**
+- Gerente autenticado no sistema.
+
+### **Pós-condições**
+- Relatório exibido ou exportado.
+
+### **Fluxo Principal**
+1. Gerente acessa módulo de relatórios.
+2. Gerente escolhe tipo de relatório.
+3. Sistema processa dados.
+4. Sistema exibe relatório.
+
+### **Fluxos Alternativos**
+**A1 — Falha na geração** - Sistema exibe erro.
+
+### **RF Relacionados**
+- RF09 —
+
+### Caso de Atividade 10 — Consulta de Histórico e Ocupação
+Esta atividade permite ao gerente consultar histórico de acessos e ocupação das aulas, auxiliando na gestão da academia e planejamento de recursos.
+
+<img width="281" height="350" alt="image" src="https://github.com/user-attachments/assets/ad6f0424-7e07-462c-a03a-d00ab00277bc" />
+
+--- 
 
 ## UC11 — Criar Plano de Academia
 
@@ -292,11 +436,6 @@ Permitir a criação de novos planos de academia.
 
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
-
-<img width="567" height="481" alt="image" src="https://github.com/user-attachments/assets/c10cbea9-11f8-4b35-92ac-61022be48c15" />
-
-### Atividade 11 — Criar Plano de Academia
-Esta atividade representa o fluxo de criação de novos planos de academia. O gerente acessa o módulo de planos, insere os dados necessários e o sistema valida. Se os dados forem válidos, o plano é salvo e disponibilizado para contratação; caso contrário, o sistema solicita correção.
 
 ---
 
@@ -334,11 +473,6 @@ Permitir a alteração das informações de um plano existente.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
-<img width="456" height="481" alt="image" src="https://github.com/user-attachments/assets/8eb59829-fba5-4ed8-970d-1a84d61af0c8" />
-
-### Atividade 12 — Editar Plano
-Esta atividade descreve a edição de planos existentes. O gerente seleciona um plano, altera informações e o sistema valida. Se os dados forem válidos, as alterações são salvas; se inválidos, o sistema solicita correção.
-
 ---
 
 ## UC13 — Ativar Plano
@@ -373,11 +507,6 @@ Permitir ativar um plano para contratação.
 
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
-
-<img width="469" height="367" alt="image" src="https://github.com/user-attachments/assets/f84e999e-6cd5-4234-a7ba-13adede6c667" />
-
-### Atividade 13 — Ativar Plano
-Esta atividade mostra o processo de ativação de um plano inativo. O gerente solicita ativação e o sistema altera o status para ativo. Se o plano já estiver ativo, o sistema apenas informa.
 
 ---
 
@@ -414,11 +543,6 @@ Permitir desativar um plano existente.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
-<img width="483" height="367" alt="image" src="https://github.com/user-attachments/assets/739201fc-2293-4e72-90c2-ba80adca5876" />
-
-### Atividade 14 — Desativar Plano
-Esta atividade trata da desativação de planos ativos. O gerente solicita a desativação e o sistema altera o status para inativo. Se o plano já estiver inativo, o sistema informa.
-
 ---
 
 ## UC15 — Consultar Horários de Aula
@@ -452,11 +576,6 @@ Visualizar aulas disponíveis e horários.
 
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
-
-<img width="517" height="312" alt="image" src="https://github.com/user-attachments/assets/857a91e2-c05a-4c30-8b20-6880018f5ee0" />
-
-### Atividade 15 — Consultar Horários de Aula
-Esta atividade permite ao aluno visualizar aulas disponíveis. O sistema consulta os registros e exibe horários e vagas. Se não houver aulas cadastradas, informa a ausência.
 
 ---
 
@@ -492,11 +611,6 @@ Notificar o aluno sobre vencimento da mensalidade.
 ### **RN Relacionadas**
 - RN01 — Bloqueio por inadimplência
 
-<img width="322" height="396" alt="image" src="https://github.com/user-attachments/assets/2ba5aa87-4352-4622-84ee-269b50d3d3a0" />
-
-### Atividade 16 — Enviar Notificação de Vencimento
-Esta atividade descreve o envio automático de notificações de vencimento de mensalidade. O sistema verifica datas, identifica vencimentos próximos e envia notificações. Em caso de falha, registra a tentativa e agenda novo envio.
-
 ---
 
 ## UC17 — Enviar Confirmação de Agendamento
@@ -531,11 +645,6 @@ Confirmar agendamento de aula ao aluno.
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
 
-<img width="224" height="396" alt="image" src="https://github.com/user-attachments/assets/dbedefd3-536c-49fe-885e-a6d48624ba52" />
-
-### Atividade 17 — Enviar Confirmação de Agendamento
-Esta atividade confirma ao aluno o agendamento de uma aula. O sistema registra o agendamento, gera mensagem e envia notificação. Se houver falha, registra o erro.
-
 ---
 
 ## UC18 — Enviar Notificação de Nova Avaliação
@@ -569,11 +678,6 @@ Informar sobre nova avaliação física.
 
 ### **RN Relacionadas**
 - RN05 — Avaliação física
-
-<img width="404" height="367" alt="image" src="https://github.com/user-attachments/assets/248520f7-276c-486c-84ed-07d88bee54c7" />
-
-### Atividade 18 — Enviar Notificação de Nova Avaliação
-Esta atividade informa ao aluno sobre uma nova avaliação física registrada. O sistema gera mensagem e envia notificação. Se houver falha, registra a tentativa de envio.
 
 ---
 
@@ -610,12 +714,6 @@ Visualizar histórico de entradas.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
-<img width="410" height="367" alt="image" src="https://github.com/user-attachments/assets/78f443a2-c1aa-413f-9fba-c3746672aa39" />
-
-### Atividade 19 — Consultar Histórico de Acessos
-Esta atividade permite ao gerente consultar o histórico de entradas dos alunos. O sistema busca os registros e exibe os dados. Se não houver registros, informa a ausência.
-
-
 ---
 
 ## UC20 — Consultar Ocupação das Aulas
@@ -650,11 +748,6 @@ Visualizar taxa de ocupação das aulas.
 
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
-
-<img width="359" height="367" alt="image" src="https://github.com/user-attachments/assets/4974a6c0-abef-4540-b6a0-a7634a281879" />
-
-### Atividade 20 — Consultar Ocupação das Aulas
-Esta atividade mostra ao gerente a taxa de ocupação das aulas. O sistema calcula vagas preenchidas e exibe resultados. Se houver falha no processamento, informa o erro.
 
 ---
 
@@ -849,4 +942,3 @@ Para facilitar a leitura, os casos de uso foram agrupados em cinco diagramas pri
 <img width="566" height="724" alt="DUC_05_luisfelipecoelho_pollyanacaso (1)" src="https://github.com/user-attachments/assets/72f7af10-061a-4244-b833-de2870fe570d" />
 
 Cada diagrama foi elaborado para ilustrar as funcionalidades de forma clara, destacando os atores envolvidos, os fluxos principais e as relações entre os casos de uso.
-
