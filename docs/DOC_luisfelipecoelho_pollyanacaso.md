@@ -25,7 +25,6 @@ Permitir registrar um novo aluno no sistema.
 4. O sistema salva o cadastro do aluno.
 
 ### **Fluxos Alternativos**
-
 **A1 — Dados obrigatórios não preenchidos**  
 - O sistema exibe mensagem solicitando preenchimento dos campos.
 
@@ -65,7 +64,6 @@ Permitir a atualização das informações cadastrais do aluno.
 4. Sistema salva as alterações.
 
 ### **Fluxos Alternativos**
-
 **A1 — Dados inválidos**  
 - Sistema exibe erro de validação.
 
@@ -102,7 +100,6 @@ Registrar pagamento da mensalidade do aluno.
 4. Sistema registra pagamento e atualiza situação do aluno.
 
 ### **Fluxos Alternativos**
-
 **A1 — Tentativa de pagamento parcial**  
 - Sistema bloqueia operação.
 
@@ -139,7 +136,6 @@ Verificar automaticamente se o aluno está com pagamento em dia.
 3. Sistema define status do aluno (regular ou inadimplente).
 
 ### **Fluxos Alternativos**
-
 **A1 — Pagamento vencido**  
 - Sistema marca aluno como inadimplente.
 
@@ -175,7 +171,6 @@ Validar entrada do aluno na academia.
 4. Sistema libera entrada.
 
 ### **Fluxos Alternativos**
-
 **A1 — Aluno inadimplente**  
 - Sistema bloqueia acesso.
 
@@ -215,7 +210,6 @@ Permitir reservar vaga em aula disponível.
 4. Sistema confirma agendamento.
 
 ### **Fluxos Alternativos**
-
 **A1 — Aula lotada**  
 - Sistema bloqueia agendamento.
 
@@ -251,7 +245,6 @@ Permitir cancelamento de reserva em aula.
 4. Sistema remove reserva.
 
 ### **Fluxos Alternativos**
-
 **A1 — Prazo expirado**  
 - Sistema bloqueia cancelamento.
 
@@ -263,4 +256,546 @@ Permitir cancelamento de reserva em aula.
 
 ### **RN Relacionadas**
 - RN03 — Cancelamento até 1 hora antes
+
+---
+
+## UC11 — Criar Plano de Academia
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Permitir a criação de novos planos de academia.
+
+### **Pré-condições**
+- Gerente autenticado no sistema.
+
+### **Pós-condições**
+- Plano cadastrado e disponível para contratação.
+
+### **Fluxo Principal**
+1. Gerente acessa o módulo de planos.  
+2. Gerente seleciona a opção de criar plano.  
+3. Gerente informa nome, valor, duração e características.  
+4. Sistema valida os dados.  
+5. Sistema salva o novo plano.
+
+### **Fluxos Alternativos**
+**A1 — Dados incompletos**  
+- Sistema solicita preenchimento dos campos obrigatórios.
+
+### **RF Relacionados**
+- RF02 — Gerenciamento de Planos
+
+### **RNF Relacionados**
+- RNF04 — Usabilidade
+
+### **RN Relacionadas**
+- RN06 — Acesso restrito por perfil
+
+---
+
+## UC12 — Editar Plano
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Permitir a alteração das informações de um plano existente.
+
+### **Pré-condições**
+- Plano deve estar cadastrado no sistema.
+
+### **Pós-condições**
+- Informações do plano atualizadas.
+
+### **Fluxo Principal**
+1. Gerente acessa lista de planos.  
+2. Gerente seleciona um plano.  
+3. Gerente altera informações desejadas.  
+4. Sistema valida dados.  
+5. Sistema salva alterações.
+
+### **Fluxos Alternativos**
+**A1 — Dados inválidos**  
+- Sistema exibe erro e solicita correção.
+
+### **RF Relacionados**
+- RF02 — Gerenciamento de Planos
+
+### **RNF Relacionados**
+- RNF04 — Usabilidade
+
+### **RN Relacionadas**
+- RN06 — Acesso restrito por perfil
+
+---
+
+## UC13 — Ativar Plano
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Permitir ativar um plano para contratação.
+
+### **Pré-condições**
+- Plano previamente cadastrado.
+
+### **Pós-condições**
+- Plano disponível para uso.
+
+### **Fluxo Principal**
+1. Gerente acessa lista de planos.  
+2. Gerente seleciona plano inativo.  
+3. Gerente solicita ativação.  
+4. Sistema altera status para ativo.
+
+### **Fluxos Alternativos**
+**A1 — Plano já ativo**  
+- Sistema informa que o plano já está disponível.
+
+### **RF Relacionados**
+- RF02 — Gerenciamento de Planos
+
+### **RNF Relacionados**
+- RNF04 — Usabilidade
+
+### **RN Relacionadas**
+- RN06 — Acesso restrito por perfil
+
+---
+
+## UC14 — Desativar Plano
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Permitir desativar um plano existente.
+
+### **Pré-condições**
+- Plano cadastrado no sistema.
+
+### **Pós-condições**
+- Plano indisponível para novas contratações.
+
+### **Fluxo Principal**
+1. Gerente acessa lista de planos.  
+2. Gerente seleciona plano ativo.  
+3. Gerente solicita desativação.  
+4. Sistema altera status para inativo.
+
+### **Fluxos Alternativos**
+**A1 — Plano já inativo**  
+- Sistema informa que o plano já está desativado.
+
+### **RF Relacionados**
+- RF02 — Gerenciamento de Planos
+
+### **RNF Relacionados**
+- RNF04 — Usabilidade
+
+### **RN Relacionadas**
+- RN06 — Acesso restrito por perfil
+
+---
+
+## UC15 — Consultar Horários de Aula
+
+### **Ator Principal**
+Aluno
+
+### **Objetivo**
+Visualizar aulas disponíveis e horários.
+
+### **Pré-condições**
+- Aluno autenticado.
+
+### **Pós-condições**
+- Lista de aulas exibida.
+
+### **Fluxo Principal**
+1. Aluno acessa módulo de aulas.  
+2. Sistema consulta aulas cadastradas.  
+3. Sistema exibe horários e vagas disponíveis.
+
+### **Fluxos Alternativos**
+**A1 — Nenhuma aula disponível**  
+- Sistema informa que não há aulas cadastradas.
+
+### **RF Relacionados**
+- RF06 — Agendamento de Aulas
+
+### **RNF Relacionados**
+- RNF04 — Usabilidade
+
+### **RN Relacionadas**
+- RN02 — Limite de vagas
+
+---
+
+## UC16 — Enviar Notificação de Vencimento
+
+### **Ator Principal**
+Sistema
+
+### **Objetivo**
+Notificar o aluno sobre vencimento da mensalidade.
+
+### **Pré-condições**
+- Mensalidade próxima do vencimento.
+
+### **Pós-condições**
+- Notificação enviada.
+
+### **Fluxo Principal**
+1. Sistema verifica datas de vencimento.  
+2. Sistema identifica mensalidades próximas.  
+3. Sistema envia notificação ao aluno.
+
+### **Fluxos Alternativos**
+**A1 — Falha no envio**  
+- Sistema registra tentativa e agenda novo envio.
+
+### **RF Relacionados**
+- RF10 — Notificações
+
+### **RNF Relacionados**
+- RNF01 — Disponibilidade
+
+### **RN Relacionadas**
+- RN01 — Bloqueio por inadimplência
+
+---
+
+## UC17 — Enviar Confirmação de Agendamento
+
+### **Ator Principal**
+Sistema
+
+### **Objetivo**
+Confirmar agendamento de aula ao aluno.
+
+### **Pré-condições**
+- Agendamento realizado.
+
+### **Pós-condições**
+- Notificação enviada.
+
+### **Fluxo Principal**
+1. Sistema registra agendamento.  
+2. Sistema gera mensagem.  
+3. Sistema envia notificação.
+
+### **Fluxos Alternativos**
+**A1 — Falha na notificação**  
+- Sistema registra erro.
+
+### **RF Relacionados**
+- RF10 — Notificações
+
+### **RNF Relacionados**
+- RNF01 — Disponibilidade
+
+### **RN Relacionadas**
+- RN02 — Limite de vagas
+
+---
+
+## UC18 — Enviar Notificação de Nova Avaliação
+
+### **Ator Principal**
+Sistema
+
+### **Objetivo**
+Informar sobre nova avaliação física.
+
+### **Pré-condições**
+- Avaliação registrada.
+
+### **Pós-condições**
+- Notificação enviada.
+
+### **Fluxo Principal**
+1. Sistema detecta nova avaliação.  
+2. Sistema gera mensagem.  
+3. Sistema envia notificação.
+
+### **Fluxos Alternativos**
+**A1 — Falha no envio**  
+- Sistema registra tentativa.
+
+### **RF Relacionados**
+- RF10 — Notificações
+
+### **RNF Relacionados**
+- RNF01 — Disponibilidade
+
+### **RN Relacionadas**
+- RN05 — Avaliação física
+
+---
+
+## UC19 — Consultar Histórico de Acessos
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Visualizar histórico de entradas.
+
+### **Pré-condições**
+- Registros existentes.
+
+### **Pós-condições**
+- Histórico exibido.
+
+### **Fluxo Principal**
+1. Gerente acessa relatórios.  
+2. Seleciona relatório de acessos.  
+3. Sistema consulta dados.  
+4. Sistema exibe histórico.
+
+### **Fluxos Alternativos**
+**A1 — Nenhum registro encontrado**  
+- Sistema informa ausência de dados.
+
+### **RF Relacionados**
+- RF09 — Relatórios Gerenciais
+
+### **RNF Relacionados**
+- RNF03 — Performance
+
+### **RN Relacionadas**
+- RN06 — Acesso restrito por perfil
+
+---
+
+## UC20 — Consultar Ocupação das Aulas
+
+### **Ator Principal**
+Gerente
+
+### **Objetivo**
+Visualizar taxa de ocupação das aulas.
+
+### **Pré-condições**
+- Aulas cadastradas.
+
+### **Pós-condições**
+- Relatório exibido.
+
+### **Fluxo Principal**
+1. Gerente acessa relatórios.  
+2. Seleciona ocupação de aulas.  
+3. Sistema calcula vagas preenchidas.  
+4. Sistema exibe resultados.
+
+### **Fluxos Alternativos**
+**A1 — Falha no processamento**  
+- Sistema exibe erro.
+
+### **RF Relacionados**
+- RF09 — Relatórios Gerenciais
+
+### **RNF Relacionados**
+- RNF03 — Performance
+
+### **RN Relacionadas**
+- RN02 — Limite de vagas
+
+---
+
+# Descrição dos Casos de Uso
+
+## 3. Casos de Uso
+
+### UC01 — Cadastrar Aluno
+Ator Principal: Recepcionista  
+Objetivo: Registrar um novo aluno no sistema.  
+Pré-condições: Recepcionista autenticado.  
+Pós-condições: Aluno cadastrado.
+
+---
+
+### UC02 — Atualizar Dados do Aluno
+Ator Principal: Recepcionista  
+Objetivo: Atualizar informações cadastrais do aluno.  
+Pré-condições: Aluno cadastrado.  
+Pós-condições: Dados atualizados.
+
+---
+
+### UC03 — Registrar Pagamento
+Ator Principal: Recepcionista  
+Objetivo: Registrar pagamento da mensalidade.  
+Pré-condições: Plano ativo.  
+Pós-condições: Pagamento registrado.
+
+---
+
+### UC04 — Verificar Regularidade
+Ator Principal: Sistema  
+Objetivo: Verificar situação do aluno.  
+Pré-condições: Aluno cadastrado.  
+Pós-condições: Status atualizado.
+
+---
+
+### UC05 — Validar Acesso na Catraca
+Ator Principal: Sistema de Catraca  
+Objetivo: Permitir ou bloquear entrada.  
+Pré-condições: RFID cadastrado.  
+Pós-condições: Acesso validado.
+
+---
+
+### UC06 — Agendar Aula
+Ator Principal: Aluno  
+Objetivo: Reservar vaga em aula.  
+Pré-condições: Aluno ativo.  
+Pós-condições: Aula agendada.
+
+---
+
+### UC07 — Cancelar Agendamento
+Ator Principal: Aluno  
+Objetivo: Cancelar reserva de aula.  
+Pré-condições: Agendamento existente.  
+Pós-condições: Reserva removida.
+
+---
+
+### UC08 — Realizar Login
+Ator Principal: Usuário  
+Objetivo: Autenticar acesso ao sistema.  
+Pré-condições: Usuário cadastrado.  
+Pós-condições: Acesso liberado.
+
+---
+
+### UC09 — Gerar Relatórios
+Ator Principal: Administrador  
+Objetivo: Emitir relatórios gerenciais.  
+Pré-condições: Dados disponíveis.  
+Pós-condições: Relatório gerado.
+
+---
+
+### UC10 — Bloquear Aluno
+Ator Principal: Sistema  
+Objetivo: Bloquear aluno inadimplente.  
+Pré-condições: Pagamento em atraso.  
+Pós-condições: Acesso bloqueado.
+
+---
+
+### UC11 — Renovar Plano
+Ator Principal: Recepcionista  
+Objetivo: Renovar plano do aluno.  
+Pré-condições: Plano existente.  
+Pós-condições: Novo período ativo.
+
+---
+
+### UC12 — Notificar Vencimento
+Ator Principal: Sistema  
+Objetivo: Avisar sobre vencimento de mensalidade.  
+Pré-condições: Data próxima do vencimento.  
+Pós-condições: Notificação enviada.
+
+---
+
+### UC13 — Validar CPF
+Ator Principal: Sistema  
+Objetivo: Validar CPF do aluno.  
+Pré-condições: CPF informado.  
+Pós-condições: CPF validado ou rejeitado.
+
+---
+
+### UC14 — Gerenciar Planos
+Ator Principal: Administrador  
+Objetivo: Criar, editar ou remover planos.  
+Pré-condições: Acesso administrativo.  
+Pós-condições: Plano atualizado.
+
+---
+
+### UC15 — Gerenciar Professores
+Ator Principal: Administrador  
+Objetivo: Cadastrar ou editar professores.  
+Pré-condições: Acesso administrativo.  
+Pós-condições: Dados atualizados.
+
+---
+
+### UC16 — Criar Aula
+Ator Principal: Administrador  
+Objetivo: Cadastrar nova aula.  
+Pré-condições: Professor disponível.  
+Pós-condições: Aula criada.
+
+---
+
+### UC17 — Excluir Aula
+Ator Principal: Administrador  
+Objetivo: Remover aula do sistema.  
+Pré-condições: Aula existente.  
+Pós-condições: Aula removida.
+
+---
+
+### UC18 — Listar Inadimplentes
+Ator Principal: Administrador  
+Objetivo: Visualizar alunos em atraso.  
+Pré-condições: Dados atualizados.  
+Pós-condições: Lista exibida.
+
+---
+
+### UC19 — Consultar Histórico de Pagamentos
+Ator Principal: Recepcionista  
+Objetivo: Visualizar histórico de pagamentos.  
+Pré-condições: Aluno cadastrado.  
+Pós-condições: Histórico exibido.
+
+---
+
+### UC20 — Integração com Catraca
+Ator Principal: Sistema  
+Objetivo: Integrar com hardware de acesso.  
+Pré-condições: Sistema conectado.  
+Pós-condições: Comunicação estabelecida.
+
+---
+## Diagramas de Caso de Uso
+
+Nesta seção apresentamos os diagramas de caso de uso do sistema **FitPass Gym Management**.  
+Os diagramas representam visualmente as interações entre os atores (Recepcionista, Aluno, Instrutor e Gerente) e os casos de uso principais do sistema, permitindo compreender rapidamente quais funcionalidades estão disponíveis para cada perfil de usuário.
+
+Para facilitar a leitura, os casos de uso foram agrupados em cinco diagramas principais, cada um contemplando um conjunto de funcionalidades relacionadas:
+
+1. **Gestão de Alunos - FitPass:** Cadastro e atualização de dados, incluindo validação de CPF.
+
+<img width="424" height="334" alt="DUC_01_luisfelipecoelho_pollyanacaso (1)" src="https://github.com/user-attachments/assets/60eb5f2b-9c81-414c-ba39-bc5d967b9bee" />
+
+2. **Gestão de Planos e Pagamentos:** Registro de pagamentos, verificação de regularidade e bloqueio de inadimplência.
+
+<img width="759" height="487" alt="DUC_02_luisfelipecoelho_pollyanacaso" src="https://github.com/user-attachments/assets/fff56186-0b68-413c-9d61-08bb1a56bd6a" />
+
+3. **Controle de Acesso:** Criação, edição, ativação e desativação de planos.
+
+<img width="759" height="487" alt="DUC_02_luisfelipecoelho_pollyanacaso" src="https://github.com/user-attachments/assets/093b8d7a-b964-4351-af18-bc26429f13c5" />
+
+4. **Gestão de Aulas:** Reservas de aulas, cancelamentos, registro de presença e consultas de horários.
+
+<img width="379" height="405" alt="DUC_04_luisfelipecoelho_pollyanacaso" src="https://github.com/user-attachments/assets/fb665ff7-0c06-403d-afbb-0297b056c7a9" />
+
+5. **Avaliações, Notificações e Relatórios:** Envio de confirmações, notificações de vencimento e avaliação, além de consulta de histórico de acessos e ocupação das aulas.
+
+<img width="566" height="724" alt="DUC_05_luisfelipecoelho_pollyanacaso (1)" src="https://github.com/user-attachments/assets/72f7af10-061a-4244-b833-de2870fe570d" />
+
+Cada diagrama foi elaborado para ilustrar as funcionalidades de forma clara, destacando os atores envolvidos, os fluxos principais e as relações entre os casos de uso.
 
