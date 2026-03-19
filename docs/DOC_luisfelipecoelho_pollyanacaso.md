@@ -297,6 +297,7 @@ Permitir a criação de novos planos de academia.
 
 ### Atividade 11 — Criar Plano de Academia
 Esta atividade representa o fluxo de criação de novos planos de academia. O gerente acessa o módulo de planos, insere os dados necessários e o sistema valida. Se os dados forem válidos, o plano é salvo e disponibilizado para contratação; caso contrário, o sistema solicita correção.
+
 ---
 
 ## UC12 — Editar Plano
