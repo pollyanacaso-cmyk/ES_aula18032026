@@ -293,6 +293,10 @@ Permitir a criação de novos planos de academia.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
+<img width="567" height="481" alt="image" src="https://github.com/user-attachments/assets/c10cbea9-11f8-4b35-92ac-61022be48c15" />
+
+### Atividade 11 — Criar Plano de Academia
+Esta atividade representa o fluxo de criação de novos planos de academia. O gerente acessa o módulo de planos, insere os dados necessários e o sistema valida. Se os dados forem válidos, o plano é salvo e disponibilizado para contratação; caso contrário, o sistema solicita correção.
 ---
 
 ## UC12 — Editar Plano
@@ -329,6 +333,11 @@ Permitir a alteração das informações de um plano existente.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
+<img width="456" height="481" alt="image" src="https://github.com/user-attachments/assets/8eb59829-fba5-4ed8-970d-1a84d61af0c8" />
+
+### Atividade 12 — Editar Plano
+Esta atividade descreve a edição de planos existentes. O gerente seleciona um plano, altera informações e o sistema valida. Se os dados forem válidos, as alterações são salvas; se inválidos, o sistema solicita correção.
+
 ---
 
 ## UC13 — Ativar Plano
@@ -363,6 +372,11 @@ Permitir ativar um plano para contratação.
 
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
+
+<img width="469" height="367" alt="image" src="https://github.com/user-attachments/assets/f84e999e-6cd5-4234-a7ba-13adede6c667" />
+
+### Atividade 13 — Ativar Plano
+Esta atividade mostra o processo de ativação de um plano inativo. O gerente solicita ativação e o sistema altera o status para ativo. Se o plano já estiver ativo, o sistema apenas informa.
 
 ---
 
@@ -399,6 +413,11 @@ Permitir desativar um plano existente.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
+<img width="483" height="367" alt="image" src="https://github.com/user-attachments/assets/739201fc-2293-4e72-90c2-ba80adca5876" />
+
+### Atividade 14 — Desativar Plano
+Esta atividade trata da desativação de planos ativos. O gerente solicita a desativação e o sistema altera o status para inativo. Se o plano já estiver inativo, o sistema informa.
+
 ---
 
 ## UC15 — Consultar Horários de Aula
@@ -432,6 +451,11 @@ Visualizar aulas disponíveis e horários.
 
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
+
+<img width="517" height="312" alt="image" src="https://github.com/user-attachments/assets/857a91e2-c05a-4c30-8b20-6880018f5ee0" />
+
+### Atividade 15 — Consultar Horários de Aula
+Esta atividade permite ao aluno visualizar aulas disponíveis. O sistema consulta os registros e exibe horários e vagas. Se não houver aulas cadastradas, informa a ausência.
 
 ---
 
@@ -467,6 +491,11 @@ Notificar o aluno sobre vencimento da mensalidade.
 ### **RN Relacionadas**
 - RN01 — Bloqueio por inadimplência
 
+<img width="322" height="396" alt="image" src="https://github.com/user-attachments/assets/2ba5aa87-4352-4622-84ee-269b50d3d3a0" />
+
+### Atividade 16 — Enviar Notificação de Vencimento
+Esta atividade descreve o envio automático de notificações de vencimento de mensalidade. O sistema verifica datas, identifica vencimentos próximos e envia notificações. Em caso de falha, registra a tentativa e agenda novo envio.
+
 ---
 
 ## UC17 — Enviar Confirmação de Agendamento
@@ -501,6 +530,11 @@ Confirmar agendamento de aula ao aluno.
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
 
+<img width="224" height="396" alt="image" src="https://github.com/user-attachments/assets/dbedefd3-536c-49fe-885e-a6d48624ba52" />
+
+### Atividade 17 — Enviar Confirmação de Agendamento
+Esta atividade confirma ao aluno o agendamento de uma aula. O sistema registra o agendamento, gera mensagem e envia notificação. Se houver falha, registra o erro.
+
 ---
 
 ## UC18 — Enviar Notificação de Nova Avaliação
@@ -534,6 +568,11 @@ Informar sobre nova avaliação física.
 
 ### **RN Relacionadas**
 - RN05 — Avaliação física
+
+<img width="404" height="367" alt="image" src="https://github.com/user-attachments/assets/248520f7-276c-486c-84ed-07d88bee54c7" />
+
+### Atividade 18 — Enviar Notificação de Nova Avaliação
+Esta atividade informa ao aluno sobre uma nova avaliação física registrada. O sistema gera mensagem e envia notificação. Se houver falha, registra a tentativa de envio.
 
 ---
 
@@ -570,6 +609,12 @@ Visualizar histórico de entradas.
 ### **RN Relacionadas**
 - RN06 — Acesso restrito por perfil
 
+<img width="410" height="367" alt="image" src="https://github.com/user-attachments/assets/78f443a2-c1aa-413f-9fba-c3746672aa39" />
+
+### Atividade 19 — Consultar Histórico de Acessos
+Esta atividade permite ao gerente consultar o histórico de entradas dos alunos. O sistema busca os registros e exibe os dados. Se não houver registros, informa a ausência.
+
+
 ---
 
 ## UC20 — Consultar Ocupação das Aulas
@@ -604,6 +649,11 @@ Visualizar taxa de ocupação das aulas.
 
 ### **RN Relacionadas**
 - RN02 — Limite de vagas
+
+<img width="359" height="367" alt="image" src="https://github.com/user-attachments/assets/4974a6c0-abef-4540-b6a0-a7634a281879" />
+
+### Atividade 20 — Consultar Ocupação das Aulas
+Esta atividade mostra ao gerente a taxa de ocupação das aulas. O sistema calcula vagas preenchidas e exibe resultados. Se houver falha no processamento, informa o erro.
 
 ---
 
